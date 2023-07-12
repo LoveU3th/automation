@@ -79,12 +79,13 @@ def SenPC():
             senp=senp+'\n'+f"👇👇👇在打卡中👇👇👇"
             senp=senp+'\n'+"🎁开始👉会员时效签到👇"
             senp=senp+'\n'+"昵称：" + Ch['nickname']
-            if pc.Signin():
-                senp=senp+'\n'+"打卡成功"
-            else:
-                senp=senp+'\n'+"打卡失败"
-            Q = pc.GetQuota() // 3600
+            # if pc.Signin():
+            #     senp=senp+'\n'+"打卡成功"
+            # else:
+            #     senp=senp+'\n'+"打卡失败"
+            
             senp=senp+'\n'+pc.Index()
+            Q = pc.GetQuota() // 3600
             senp=senp+'\n'+f"当前时间额度为{str(Q)}小时({Q//24}天)"
             senp=senp+'\n'+"🎁开始👉空间签到👇"
             if pc.SenSpace():
@@ -108,11 +109,11 @@ def SenPC():
         except Exception as e:
             senp=senp+'\n'+"出错了！详细错误👇错误CK👉" + mt_token
             senp=senp+'\n'+str(e)
-        print(senp)
-        sen=sen+senp
+    print(senp)
+    sen=sen+senp    
 
 
 if __name__ == '__main__':
-    SenWx()
+    #SenWx()
     SenPC()
-    notify.send('WPS打卡',sen)
+    #notify.send('WPS打卡',sen)

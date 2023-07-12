@@ -35,9 +35,10 @@ class wps:
         if j["result"] == "ok":
             return True
         else:
-            print('打卡失败，延迟30秒继续')
-            time.sleep(60)
-            return self.Signin()
+            # print('打卡失败，延迟30秒继续')
+            # time.sleep(60)
+            # return self.Signin()
+            return False
         # {"data":{},"msg":"RecordTimeOut","result":"error"}
         # return False
 
@@ -100,14 +101,29 @@ class wps:
         # print(j)
         endtime = get_millisecondToTim(j['data']['end'])
         starttime = get_millisecondToTim(j['data']['start'])
-        R = f"签到周期：{endtime}至{starttime}"
+        today = datetime.date.today()  # 获取当前日期
+        R = f"签到周期：{starttime}至{endtime}"
         for v in j['data']["list"]:
             # print(v['status'],v['times'],json.loads(v['ext'])[0]['hour'])
-            if v['status'] == 1:
-                R = R + '\n' + f"第{str(v['times'])}天奖励{str(json.loads(v['ext'])[0]['hour'])}小时，签到成功"
-            else:
-                R = R + '\n' + f"第{str(v['times'])}天奖励{str(json.loads(v['ext'])[0]['hour'])}小时，未签到"
-        print(R)
+            # if v['status'] == 1:
+            #     R = R + '\n' + f"第{str(v['times'])}天奖励{str(json.loads(v['ext'])[0]['hour'])}小时，签到成功"
+            # else:
+            #     R = R + '\n' + f"第{str(v['times'])}天奖励{str(json.loads(v['ext'])[0]['hour'])}小时，未签到"
+        # print(R)
+            sign_date = datetime.datetime.strptime(starttime, '%Y-%m-%d').date() + datetime.timedelta(days=v['times'] - 1)
+            if sign_date == today:
+                if v['status'] == 1:
+                    R = R + '\n' + f"今日已完成会员签到"
+                    continue
+                else:
+                    R = R + '\n' + f"今日未签到，立即执行签到"  # 需要执行签到操作
+                    sign = self.Signin()
+                    if sign:
+                        R = R + '\n' + f"今日会员签到成功"
+                    else:
+                        R = R + '\n' + f"会员签到失败"
+                    continue
+            R = R + '\n' + f"第{str(v['times'])}天奖励{str(json.loads(v['ext'])[0]['hour'])}小时，{'' if v['status'] == 1 else '未'}签到"
         return R
 
     def SenExchange(self, day):
