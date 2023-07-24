@@ -10,7 +10,7 @@ class wps:
     def __init__(self, wpsua, wps_sid):
         # self.UA = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.20 Safari/537.36'
         # self.Referer = 'https://vip.wps.cn/spa/2021/wps-sign/?position=2020_vip_massing&client_pay_version=202301'
-        # self.Origin = 'https://vip.wps.cn'
+        self.Origin = 'https://vip.wps.cn'
         # self.p = 'EHkk0AYnPraZs9%2FxHs77MawspohSbN%2B3oM8CIvAs%2BNAc%2FYlFBN3KXKhNmLrEe%2BCWw6XnMEpoy3RQJJrDf%2FUxCm7p95EckQCkwjqxwjNAy2oMzwCoq%2B7HzvZUi%2FvmQl0%2F6lqvriaJzUeMzHjpJwj2EcPUSeQMDulTNFrEmnOACvc%3D'
         # self.v = '11.1.0.14036'
         self.wpsua = wpsua
