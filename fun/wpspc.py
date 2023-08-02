@@ -15,8 +15,8 @@ class wps:
         # self.v = '11.1.0.14036'
         self.wpsua = wpsua
         self.wps_sid = wps_sid
-        self.p = 'PP6MwnbYmefBrhgWBb8l5zXm%2F6VPeNmmM0qs0yoB0RrdYg32B%2Fv1UXx9W9OQFmFP4RrtOkzPbkgai0V7DyLNLk74qFDEk%2B04BkPAmWO69oojJHcNUuPsLNraH3KQ1oTVz7%2FvroW5i%2BlRyMHWiDv2ori2k%2Bn6Jw8aasnRzXH5O4E%3D'
-        self.v = '12.1.0.151'
+        self.p = 'Q%2FYxEW8UC2nFjvp67jZ4ZBANM3iLSY2hGVtauKcIelUmVQfdiApe457iSe2BGMNfT5zyLpTktiBURRtxjTCb65ImMcEW2PLxE7%2Fbp2DS%2Fd7wF1qnE%2Bt%2BUVbuO%2Flvs8x6udFo6YcD6UXgrE5gC%2BcbsnWvC8Z2Po2Q8lVfbvrIexo%3D'
+        self.v = '12.1.0.15120'
         self.UA = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 WpsOfficeApp/12.1.0.15120 (1)'
         self.Referer = 'https://vip.wps.cn/'
 
@@ -25,7 +25,7 @@ class wps:
         签到
         :return:
         '''
-        url = f"https://vipapi.wps.cn/wps_clock/v2?double=0&p={self.p}&v={self.v}"
+        url = f"https://vipapi.wps.cn/wps_clock/v2?double=0&v={self.v}&p={self.p}"
         payload = {}
         headers = {
             'Referer': self.Referer,
