@@ -15,7 +15,7 @@ class wps:
         # self.v = '11.1.0.14036'
         self.wpsua = wpsua
         self.wps_sid = wps_sid
-        self.p = 'Q%2FYxEW8UC2nFjvp67jZ4ZBANM3iLSY2hGVtauKcIelUmVQfdiApe457iSe2BGMNfT5zyLpTktiBURRtxjTCb65ImMcEW2PLxE7%2Fbp2DS%2Fd7wF1qnE%2Bt%2BUVbuO%2Flvs8x6udFo6YcD6UXgrE5gC%2BcbsnWvC8Z2Po2Q8lVfbvrIexo%3D'
+        self.p = 'WGO9CZwe%2Fh6cS3n60BsKLK0myJT89di64Szk5JstMsRopzrqW3dYGH8ILqJRx1vndu4NMTk%2F8bLVVl2oJssyEMWDLkhdgRdwCPgessUHRnWYrrkAqe2hP8xvQ0Ej0%2FS8M1ZzwBUzaPXUaa9wDXjc4Bn%2BX4eCFrQ%2FCojuRMJYH0Y%3D'
         self.v = '12.1.0.15120'
         self.UA = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 WpsOfficeApp/12.1.0.15120 (1)'
         self.Referer = 'https://vip.wps.cn/'
